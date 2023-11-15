@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="card-service" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="card-service" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="a.gleb.cardservice.CardServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -8,7 +8,7 @@
         <version>1.0-RELEASE</version>
     </parent>
 
-    <artifactId>oauth2-server</artifactId>
+    <artifactId>card-service</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -24,11 +24,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- Other -->
@@ -44,5 +44,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>
