@@ -1,0 +1,72 @@
+server:
+  port: 9001
+
+oauth2-server:
+  cors:
+    enabled: true
+    allowed-origins: "*"
+    allowed-origins-all: true
+    allowed-methods:
+      - "*"
+    allowed-headers:
+      - "*"
+  keycloak:
+    base-url: http://localhost:8080
+
+spring:
+  application:
+    name: oauth2-server
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/authorization
+    password: postgres
+    username: postgres
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/master
+      authorizationserver:
+        client:
+          default-client:
+            registration:
+              client-id: "default-client"
+              client-secret: "ZGVmYXVsdC1jbGllbnQ="
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+                - "client_credentials"
+              redirect-uris:
+                - "http://127.0.0.1:8080/login/oauth2/code/messaging-client-oidc"
+                - "http://127.0.0.1:8080/authorized"
+              post-logout-redirect-uris:
+                - "http://127.0.0.1:8080/logged-out"
+              scopes:
+                - "openid"
+                - "profile"
+                - "message.read"
+                - "message.write"
+            require-authorization-consent: true
+      client:
+        registration:
+          keycloak:
+            authorization-grant-type: password
+            provider: keycloak
+            client-id: jwt_client
+            scope:
+              - openid
+            client-secret: vTdjEKfiJijGm5tu9czlWI2uX7ZJcuVw
+        provider:
+          keycloak:
+            token-uri: ${oauth2-server.keycloak.base-url}/realms/master/protocol/openid-connect/token
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    root: info

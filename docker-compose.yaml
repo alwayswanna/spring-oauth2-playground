@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  postgresql:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: authorization
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+  keycloak:
+    image: bitnami/keycloak:21.1.2
+    ports:
+      - "8080:8080"
+    environment:
+      KEYCLOAK_DATABASE_VENDOR: dev-file
