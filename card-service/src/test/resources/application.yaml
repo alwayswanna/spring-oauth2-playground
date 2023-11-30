@@ -1,0 +1,46 @@
+server:
+  port: 7071
+  error:
+    include-message: always
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: must-be-unused
+      client-secret: must-be-unused
+  oAuthFlow:
+    authorizationUrl: http://must-be-unused
+    tokenUrl: http://must-be-unused
+
+card-service:
+  cors-configuration:
+    enabled: true
+    allowed-origins: "*"
+    allowed-origins-all: true
+    allowed-methods:
+      - "*"
+    allowed-headers:
+      - "*"
+
+spring:
+  application:
+    name: card-service
+  datasource:
+    driver-class-name:
+    url: jdbc:tc:postgresql:15:///postgres
+    password: postgres
+    username: postgres
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://127.0.0.1:9001
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    root: trace

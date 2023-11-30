@@ -1,0 +1,11 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "firstName": "Администратор",
+    "lastName": "Администратор",
+    "middleName": "Администратор",
+    "email": "admin@resource.ru",
+    "birthDate": "1995-03-13"
+  }
+]

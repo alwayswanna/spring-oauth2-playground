@@ -1,1 +1,5 @@
 .idea
+.gradle
+oauth2-server/build
+card-service/build
+statistics-service/build
