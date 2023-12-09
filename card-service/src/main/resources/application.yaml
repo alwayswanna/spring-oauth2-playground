@@ -1,0 +1,62 @@
+server:
+  port: 7071
+  error:
+    include-message: always
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: default-client
+      client-secret: ZGVmYXVsdC1jbGllbnQ=
+  oAuthFlow:
+    authorizationUrl: http://127.0.0.1:9001/oauth2/authorize
+    tokenUrl: http://127.0.0.1:9001/oauth2/token
+
+card-service:
+  cors-configuration:
+    enabled: true
+    allowed-origins: "*"
+    allowed-origins-all: true
+    allowed-methods:
+      - "*"
+    allowed-headers:
+      - "*"
+  security-constraints:
+    - auth-roles:
+        - CREATE
+        - VIEW
+        - ADMIN
+      security-collections:
+        - patterns:
+            - /api/v1/card
+    - auth-roles:
+        - ADMIN
+        - STATISTICS
+        - openid
+      security-collections:
+        - patterns:
+            - /api/v1/statistics
+
+spring:
+  application:
+    name: card-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/cards
+    password: postgres
+    username: postgres
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://127.0.0.1:9001
+          jwk-set-uri: http://127.0.0.1:9001/oauth2/jwks
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    root: info

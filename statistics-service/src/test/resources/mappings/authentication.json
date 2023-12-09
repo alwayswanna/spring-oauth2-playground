@@ -1,0 +1,19 @@
+{
+  "request" : {
+    "host" : {
+      "equalTo" : "localhost"
+    },
+    "url" : "/oauth2/token",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "jsonBody" : {
+      "access_token": "stub-token",
+      "token_type": "Bearer"
+    },
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  }
+}
