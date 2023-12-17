@@ -1,0 +1,49 @@
+server:
+  port: 9001
+
+oauth2-server:
+  cors:
+    enabled: true
+    allowed-origins: "*"
+    allowed-origins-all: true
+    allowed-methods:
+      - "*"
+    allowed-headers:
+      - "*"
+  keycloak:
+    base-url: http://localhost:8080
+
+spring:
+  application:
+    name: oauth2-server
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak-idp:
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:9001/login/oauth2/code/keycloak-idp"
+            provider: keycloak
+            client-id: jwt_client
+            client-secret: acOOxqDdosRjzp13nwXtK3FslE6ZK46y
+            scope:
+              - openid
+              - profile
+              - email
+            client-name: Sign in with keycloak
+        provider:
+          keycloak:
+            authorization-uri: ${oauth2-server.keycloak.base-url}/realms/master/protocol/openid-connect/auth
+            token-uri: ${oauth2-server.keycloak.base-url}/realms/master/protocol/openid-connect/token
+            user-info-uri: ${oauth2-server.keycloak.base-url}/realms/master/protocol/openid-connect/userinfo
+            jwk-set-uri: ${oauth2-server.keycloak.base-url}/realms/master/protocol/openid-connect/certs
+            user-name-attribute: preferred_username
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    root: info

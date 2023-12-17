@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CardServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="spring-oauth2-playground.card-service.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="a.gleb.cardservice.CardServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

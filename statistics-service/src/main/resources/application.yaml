@@ -1,0 +1,47 @@
+server:
+  port: 7072
+  error:
+    include-message: always
+
+statistics-service:
+  card-service:
+    url: http://localhost:7071
+  schedulers:
+    cards: "0 0/5 *  * * ?"
+
+spring:
+  application:
+    name: statistics-service
+  cloud:
+    openfeign:
+      oauth2:
+        enabled: true
+        clientRegistrationId: default-client
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/card_statistics
+    password: postgres
+    username: postgres
+  security:
+    oauth2:
+      client:
+        registration:
+          default-client:
+            provider: default-client
+            client-id: default-client
+            client-secret: ZGVmYXVsdC1jbGllbnQ=
+            authorization-grant-type: client_credentials
+            scope:
+              - openid
+        provider:
+          default-client:
+            token-uri: http://127.0.0.1:9001/oauth2/token
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    root: info

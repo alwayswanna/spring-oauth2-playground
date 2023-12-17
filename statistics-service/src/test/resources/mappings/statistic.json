@@ -1,0 +1,31 @@
+{
+  "request": {
+    "host": {
+      "equalTo": "localhost"
+    },
+    "url": "/api/v1/statistics",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "cardId": "94810c7d-08bb-473a-8b76-f9beef744492",
+        "cardTitle": "string",
+        "cardDescription": "string",
+        "sub": "admin",
+        "updateTime": "2023-11-30T21:29:00.294691"
+      },
+      {
+        "cardId": "1a842cfa-a092-455e-b607-93202ac3aff3",
+        "cardTitle": "string",
+        "cardDescription": "string",
+        "sub": "admin",
+        "updateTime": "2023-12-06T21:10:52.654162"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

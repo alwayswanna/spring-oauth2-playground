@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StatisticsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="spring-oauth2-playground.statistics-service.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="a.gleb.statisticsservice.StatisticsServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
