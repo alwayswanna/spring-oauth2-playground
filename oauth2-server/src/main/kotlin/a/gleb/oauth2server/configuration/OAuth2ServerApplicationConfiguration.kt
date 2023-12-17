@@ -1,0 +1,9 @@
+package a.gleb.oauth2server.configuration
+
+import a.gleb.oauth2server.configuration.properties.OAuth2ServerConfigurationProperties
+import org.springframework.boot.context.properties.EnableConfigurationProperties
+import org.springframework.context.annotation.Configuration
+
+@Configuration
+@EnableConfigurationProperties(OAuth2ServerConfigurationProperties::class)
+class OAuth2ServerApplicationConfiguration

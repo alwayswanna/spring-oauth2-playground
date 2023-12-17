@@ -1,1 +1,12 @@
 .idea
+.gradle
+card-service/build
+statistics-service/build
+oauth2-server/build
+front/build
+front/.idea
+front/.dart_tool
+front/test
+/front/.flutter-plugins-dependencies
+/front/.flutter-plugins
+/.jpb/jpb-settings.xml

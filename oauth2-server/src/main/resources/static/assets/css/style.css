@@ -1,0 +1,130 @@
+
+body {
+    background-color: cyan;
+    z-index: 1;
+}
+
+* {
+    overflow: hidden;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, serif;
+    font-size: 18px;
+    background: black;
+}
+
+/*Make divs stack up */
+.absolute {
+
+}
+
+.circles {
+    width: 200px;
+    height: 200px;
+    border: 3px solid cyan;
+    border-radius: 50%;
+    item-align: center;
+    justify-content: center;
+    position: absolute;
+    margin: 0 auto 0 40%;
+    top: 40%;
+}
+
+.one {
+    animation: circles 4.4s infinite linear;
+}
+
+.two {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 0.6s;
+
+}
+
+.three {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 0.9s;
+
+}
+
+.four {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 1.2s;
+
+}
+
+.five {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 1.5s;
+
+}
+
+.six {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 1.8s;
+
+}
+
+.seven {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 2.1s;
+
+}
+
+.eight {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 2.4s;
+
+}
+
+.nine {
+    animation: circles 4.4s infinite linear;
+    animation-delay: 4.4s;
+
+}
+
+.button-login-item {
+    position: absolute;
+    top: 44%;
+    color: white;
+    left: 40%;
+}
+
+.button-login-item a {
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.button-login-item div {
+    font-family: Verdana, serif;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: cyan;
+    height: 50px;
+    text-align: center;
+    color: black;
+    padding: 25px 10px 0 10px
+}
+
+.authorized-user {
+    color: white;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+@keyframes circles {
+    from {
+        transform: scale(0.1);
+        display: none;
+    }
+    to {
+        transform: scale(5)
+    }
+}

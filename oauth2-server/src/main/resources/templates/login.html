@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Authorization</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div class="absolute">
+  <div class="circles one">
+  </div>
+  <div class="circles two"></div>
+  <div class="circles three"></div>
+  <div class="circles four">
+  </div>
+  <div class="circles five">
+  </div>
+  <div class="circles six">
+  </div>
+  <div class="circles seven">
+  </div>
+  <div class="circles eight">
+  </div>
+  <div class="circles nine">
+  </div>
+  <div class="button-login-item">
+    <form method="post" th:action="@{/login}">
+      <a href="/oauth2/authorization/keycloak-idp">
+        <div>
+          Sign with Keycloak
+        </div>
+      </a>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
