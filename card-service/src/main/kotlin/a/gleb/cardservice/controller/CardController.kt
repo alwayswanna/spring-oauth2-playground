@@ -13,7 +13,7 @@ import java.util.*
 const val CARD_CONTROLLER = "card.controller"
 
 @RestController
-@RequestMapping("/api/v1/card")
+@RequestMapping("/api/v1")
 @Tag(name = CARD_CONTROLLER)
 class CardController(
     private val cardService: CardService
@@ -23,16 +23,25 @@ class CardController(
         summary = "Get card by ID",
         security = [SecurityRequirement(name = OAUTH2_SECURITY_SCHEMA)]
     )
-    @GetMapping
+    @GetMapping("/card")
     fun get(@RequestParam id: UUID): CardResponse {
         return cardService.get(id)
+    }
+
+    @Operation(
+        summary = "Fetch all cards",
+        security = [SecurityRequirement(name = OAUTH2_SECURITY_SCHEMA)]
+    )
+    @GetMapping("/cards")
+    fun getAll(): List<CardResponse> {
+        return cardService.getAll()
     }
 
     @Operation(
         summary = "Create new card",
         security = [SecurityRequirement(name = OAUTH2_SECURITY_SCHEMA)]
     )
-    @PostMapping
+    @PostMapping("/card")
     fun create(@RequestBody request: CardRequest): CardResponse {
         return cardService.create(request)
     }
@@ -41,7 +50,7 @@ class CardController(
         summary = "Update card",
         security = [SecurityRequirement(name = OAUTH2_SECURITY_SCHEMA)]
     )
-    @PutMapping
+    @PutMapping("/card")
     fun update(@RequestBody request: CardRequest): CardResponse {
         return cardService.update(request)
     }
@@ -50,7 +59,7 @@ class CardController(
         summary = "Delete card",
         security = [SecurityRequirement(name = OAUTH2_SECURITY_SCHEMA)]
     )
-    @DeleteMapping
+    @DeleteMapping("/card")
     fun delete(@RequestParam id: UUID) {
         return cardService.delete(id)
     }

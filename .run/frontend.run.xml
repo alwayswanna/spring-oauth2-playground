@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="frontend" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="additionalArgs" value="--web-hostname 127.0.0.1 --web-port 8000" />
+    <option name="filePath" value="$PROJECT_DIR$/front/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -95,4 +95,14 @@ class CardService(
             .map { cardMapper.toResponse(it) }
             .toList()
     }
+
+    /**
+     * Method fetch all cards.
+     */
+    fun getAll(): List<CardResponse> {
+        logger.info { "Fetch all cards" }
+        return cardEntityRepository.findAll()
+            .map { cardMapper.toResponse(it) }
+            .toList()
+    }
 }
